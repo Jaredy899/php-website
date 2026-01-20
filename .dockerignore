@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Development scripts
+start-server.sh
+stop-server.sh
+
+# Cloudflare tunnel config
+config.yaml
+
+# Node modules (if any)
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# README (not needed in container)
+README.md

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  php-website:
+    build: .
+    container_name: php-website
+    ports:
+      - "82:80"
+    volumes:
+      # Mount content directory so blog posts can be updated without rebuilding
+      - ./content:/var/www/html/content
+      # Mount config for easy configuration changes
+      - ./config.php:/var/www/html/config.php
+    restart: unless-stopped
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
