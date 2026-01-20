@@ -1,0 +1,7 @@
+tunnel: php-website
+credentials-file: /Users/jared/.cloudflared/ec96915c-2f98-408b-a78a-9ed573f36666.json
+
+ingress:
+  - hostname: php-website.jaredcervantes.com
+    service: http://localhost:8000
+  - service: http_status:404

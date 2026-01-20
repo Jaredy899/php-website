@@ -97,6 +97,36 @@ For a more complete development setup, consider using:
 - XAMPP/MAMP
 - Docker
 
+### Cloudflare Tunnel Setup
+
+To expose your local development server to the internet using Cloudflare Tunnels:
+
+1. **Install cloudflared** (if not already installed):
+   ```bash
+   brew install cloudflared
+   ```
+
+2. **Authenticate with Cloudflare**:
+   ```bash
+   cloudflared tunnel login
+   ```
+
+3. **Create and configure tunnel**:
+   ```bash
+   ./start-server.sh
+   ```
+
+4. **Access your site**:
+   - Local: `http://localhost:8000`
+   - Public: `https://php-website.jaredcervantes.com`
+
+5. **Stop the server**:
+   ```bash
+   ./stop-server.sh
+   ```
+
+The tunnel configuration is stored in `config.yaml` and connects your local server to the internet securely.
+
 ## 📝 Writing Blog Posts
 
 Create new blog posts as Markdown files in the `content/blog/` directory. Use the following structure:
